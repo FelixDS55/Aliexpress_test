@@ -13,7 +13,9 @@ public class CategoriesFormPage extends TestBase {
 
     @Test
     void categoriesCheck(){
-        MainPage mainPage = new MainPage(BASE_URL);
+        step("Открываем сайт", () -> {
+            open("https://aliexpress.ru/");
+        });
         step("Проверка наличия на главной странице меню Категории", () -> {
             $(".SnowCategoriesMenu_SnowCategoriesMenu__categoryList__1xev4").
                     find(byText("Категории")).shouldBe(Condition.visible);

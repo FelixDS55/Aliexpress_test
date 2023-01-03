@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
-    public final static String BASE_URL = "https://aliexpress.ru/";
+//    public final static String BASE_URL = "https://aliexpress.ru/";
 
     @BeforeAll
     static void setUp(){
