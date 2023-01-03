@@ -1,6 +1,8 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.byText;
@@ -11,8 +13,7 @@ public class CategoriesFormPage extends TestBase {
 
     @Test
     void categoriesCheck(){
-//        MainPage mainPage = new MainPage(BASE_URL);
-        open("https://aliexpress.ru");
+        MainPage mainPage = new MainPage(BASE_URL);
         step("Проверка наличия на главной странице меню Категории", () -> {
             $(".SnowCategoriesMenu_SnowCategoriesMenu__categoryList__1xev4").
                     find(byText("Категории")).shouldBe(Condition.visible);
