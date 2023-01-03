@@ -21,7 +21,7 @@ public class FooterTest {
     }
     @ValueSource(strings = {"Политика Конфиденциальности", "Карта сайта", "Пользовательские соглашения"})
     @ParameterizedTest(name = "Проверка наличия в footer ссылок {0}")
-    void testFooterLList(String element){
+    void testFooterList(String element){
         $(".SnowFooter_PaymentCopyright__copyrightContainer__vldyy").$(byText(element)).shouldBe(visible);
     }
 }
