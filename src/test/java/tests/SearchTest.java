@@ -19,7 +19,7 @@ public class SearchTest{
         step("Проверка поиска товара", () -> {
             $("#searchInput").setValue("Pixel 7").pressEnter();
             $$(".snow-container_SnowContainer__container__hu0uqp").filterBy(text("Pixel 7"))
-                    .shouldHave(CollectionCondition.sizeLessThanOrEqual(1));
+                    .shouldHave(CollectionCondition.sizeGreaterThanOrEqual(1));
         });
     }
 }
