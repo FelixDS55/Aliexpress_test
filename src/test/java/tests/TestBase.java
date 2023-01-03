@@ -9,11 +9,13 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class TestBase {
 
     @BeforeAll
     static void setUp(){
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         Configuration.holdBrowserOpen = true;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -24,6 +26,7 @@ public class TestBase {
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        open("https://aliexpress.ru/");
     }
 
     @AfterEach
