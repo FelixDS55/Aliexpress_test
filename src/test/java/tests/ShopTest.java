@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class ShopTest {
+public class ShopTest extends TestBase {
     @Test
     void shopTest(){
         step("Открываем сайт", () -> {

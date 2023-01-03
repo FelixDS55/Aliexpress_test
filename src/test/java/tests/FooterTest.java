@@ -12,10 +12,10 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class FooterTest {
+public class FooterTest extends TestBase {
 
     @BeforeEach
-    void setUp(){
+    static void setUp(){
         open("https://aliexpress.ru/");
         Configuration.holdBrowserOpen = true;
     }
