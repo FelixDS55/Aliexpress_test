@@ -15,6 +15,7 @@ public class CategoriesFormPage extends TestBase {
     void categoriesCheck(){
         step("Открываем сайт", () -> {
             open("https://aliexpress.ru/");
+            Configuration.holdBrowserOpen = true;
         });
         step("Проверка наличия на главной странице меню Категории", () -> {
             $(".SnowCategoriesMenu_SnowCategoriesMenu__categoryList__1xev4").
