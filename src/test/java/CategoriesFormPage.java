@@ -8,7 +8,7 @@ import static io.qameta.allure.Allure.step;
 public class CategoriesFormPage extends TestBase {
 
     @Test
-    void registrationForm(){
+    void categoriesCheck(){
         MainPage mainPage = new MainPage(BASE_URL);
         step("Проверка наличия на главной странице меню Категории", () -> {
             $(".SnowCategoriesMenu_SnowCategoriesMenu__categoryList__1xev4").find(byText("Категории")).shouldBe(Condition.visible);
