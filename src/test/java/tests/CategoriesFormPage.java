@@ -1,7 +1,6 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
-import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.byText;
