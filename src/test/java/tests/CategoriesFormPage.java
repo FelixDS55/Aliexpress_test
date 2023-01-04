@@ -9,14 +9,14 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class CategoriesFormPage extends TestBase {
+public class CategoriesFormPage {
 
     @Test
     void categoriesCheck(){
-//        step("Открываем сайт", () -> {
-//            open("https://aliexpress.ru/");
-//            Configuration.holdBrowserOpen = true;
-//        });
+        step("Открываем сайт", () -> {
+            open("https://aliexpress.ru/");
+            Configuration.holdBrowserOpen = true;
+        });
         step("Проверка наличия на главной странице меню Категории", () -> {
             $(".SnowCategoriesMenu_SnowCategoriesMenu__categoryList__1xev4").
                     find(byText("Категории")).shouldBe(Condition.visible);
