@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -13,10 +14,9 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class FooterTest extends TestBase {
-
-    @BeforeEach
-    static void setUp(){
-        open("https://aliexpress.ru/");
+    @BeforeAll
+    void openPage(){
+        Selenide.open("https://aliexpress.ru/");
         Configuration.holdBrowserOpen = true;
     }
     @ValueSource(strings = {"Политика Конфиденциальности", "Карта сайта", "Пользовательские соглашения"})
