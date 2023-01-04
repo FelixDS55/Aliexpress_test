@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class FooterTest extends TestBase {
-    @BeforeAll
+    @BeforeEach
     void openPage(){
         Selenide.open("https://aliexpress.ru/");
         Configuration.holdBrowserOpen = true;
