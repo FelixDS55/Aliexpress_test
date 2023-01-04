@@ -12,9 +12,9 @@ public class SearchTest extends TestBase {
 
     @Test
     void searchTest (){
-//        step("Открываем сайт", () -> {
-//            open("https://aliexpress.ru/");
-//        });
+        step("Открываем сайт", () -> {
+            open("https://aliexpress.ru/");
+        });
         step("Проверка поиска товара", () -> {
             $("#searchInput").setValue("Pixel 7").pressEnter();
             $$(".snow-container_SnowContainer__container__hu0uqp").filterBy(text("Pixel 7"))

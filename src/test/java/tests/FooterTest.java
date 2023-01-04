@@ -14,11 +14,11 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class FooterTest extends TestBase {
 
-//    @BeforeEach
-//    void setUp(){
-//        open("https://aliexpress.ru/");
-//        Configuration.holdBrowserOpen = true;
-//    }
+    @BeforeEach
+    static void setUp(){
+        open("https://aliexpress.ru/");
+        Configuration.holdBrowserOpen = true;
+    }
     @ValueSource(strings = {"Политика Конфиденциальности", "Карта сайта", "Пользовательские соглашения"})
     @ParameterizedTest(name = "Проверка наличия в footer ссылок {0}")
     void testFooterList(String element){

@@ -14,10 +14,10 @@ import static io.qameta.allure.Allure.step;
 public class ShopTest extends TestBase {
     @Test
     void shopTest(){
-//        step("Открываем сайт", () -> {
-//            open("https://aliexpress.ru/");
-//            Configuration.holdBrowserOpen = true;
-//        });
+        step("Открываем сайт", () -> {
+            open("https://aliexpress.ru/");
+            Configuration.holdBrowserOpen = true;
+        });
         step("Ищем товар", () -> {
             $("#searchInput").setValue("Pixel 7").pressEnter();
             $(byXpath("//div[@data-product-id='1005004818013867']//a")).click();
