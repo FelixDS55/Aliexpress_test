@@ -46,4 +46,5 @@ allure {
 #### jenkins:
 - Формат сборки в Jenkins: clean test
 - Формат отчета выполнения тестов в jenkins выглядит следующим образом:
-![](../Screen Aliexpress_test/Jenkins.png)
+
+![Jenkins](https://user-images.githubusercontent.com/81954013/211168119-5bdf8449-f369-4e19-969b-ddccccad7925.png)
