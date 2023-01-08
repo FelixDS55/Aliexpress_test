@@ -47,3 +47,36 @@ allure {
 - Формат сборки в Jenkins: clean test
 - Формат отчета выполнения тестов в jenkins выглядит следующим образом:
 ![Jenkins](https://user-images.githubusercontent.com/81954013/211168281-a3951ecc-e5ea-4e27-95d4-059d04a46936.png)
+
+- Для подключения визуальной составляющей Allure указываем Path: build/allure-results. После выполнения сборки нам доступен следующего формата отчет:
+![Allure](https://user-images.githubusercontent.com/81954013/211212955-ded80fdc-ca84-4461-9c26-7ae751776872.png)
+
+## Подключение отчетов о выполнении прохождения тестов в телеграм
+#### В телеграм:
+- создать бота (сохранить токен)
+- добавить бота в нужный чат
+- сделать бота админом
+- получить chat_id при помощи: https://api.telegram.org/bot{secret_bot}/getUpdates
+#### jenkins:
+- В разделе "Сборка" добавить шаг сборки "Create/Update Text File"
+- Указать File Path: notifications/telegram.json
+- Проставить галки для Create at Workspace и Overwrite file
+- Добавить telegram.json:
+```
+{
+  base: {
+    project: "${JOB_BASE_NAME}",
+    environment: "qa.guru",
+    comment: "some comment",
+    reportLink: "${BUILD_URL}",
+    language: "en",
+    allureFolder: "allure-report/",
+    enableChart: true
+  },
+  telegram: {
+    token: "5936148191:AAHIFConJnr........",
+    chat: "-1...............",
+    replyTo: ""
+  }
+}
+```
